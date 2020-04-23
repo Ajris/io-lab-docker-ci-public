@@ -4,7 +4,7 @@ services:
   web:
     image: ajris/io-lab-docker-ci-public:v1.0
     ports:
-      - 5000:5000 
+      - 80:5000 
     environment:
       REDIS_HOST: redis
       REDIS_PORT: 6379
