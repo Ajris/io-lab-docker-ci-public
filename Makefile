@@ -39,11 +39,11 @@ image:
 		--build-arg SCHEMA_BUILD_VERSION="$(SCHEMA_BUILD_VERSION)" \
 		--build-arg SCHEMA_CMD="$(SCHEMA_CMD)" \
 		-t $(PREFIX)/$(REPO_NAME):latest .
-	docker tag $(PREFIX)/$(REPO_NAME):latest $(PREFIX)/$(REPO_NAME):v1
+	docker tag $(PREFIX)/$(REPO_NAME):latest $(PREFIX)/$(REPO_NAME):$(TAG)
 	
 push: image
 	docker push $(PREFIX)/$(REPO_NAME):latest
-	docker push $(PREFIX)/$(REPO_NAME):v1
+	docker push $(PREFIX)/$(REPO_NAME):$(TAG)
 clean:
 
 .PHONY: clean image push all
